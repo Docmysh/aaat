@@ -3,7 +3,7 @@
   "minVersion": "0.8",
   "package": "aaat.aaat.mixin",
   "compatibilityLevel": "JAVA_17",
-  "refmap": "aaat.refmap.json",
+  "plugin": "aaat.aaat.mixin.AAATMixinPlugin",
   "mixins": [
   ],
   "client": [],
