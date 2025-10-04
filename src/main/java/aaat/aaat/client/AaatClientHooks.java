@@ -9,12 +9,12 @@ import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * Centralises client-only hooks used by AAA. The previous implementation
- * injected directly into {@link Minecraft} to resize the captured depth buffer
- * when the window size changed. Mojang renamed the targeted method in 1.20.1,
- * which caused the mixin to crash during game start. Instead of hard failing
- * when the method cannot be found, the mixin now delegates to this utility
- * which performs the resize logic in a safe, optional manner.
+ * Centralises client-only hooks used by AAA. {@code AAAParticles} registers the
+ * captured depth buffer through these helpers, while {@link Minecraft}'s tick
+ * loop invokes {@link #resizeCapturedDepthBuffer()} via a Forge client tick
+ * event. This keeps the resize logic independent from method names in Mojang's
+ * official mappings, ensuring that the integration remains stable when those
+ * names change.
  */
 public final class AaatClientHooks {
     private static final AtomicReference<RenderTarget> CAPTURED_DEPTH_BUFFER = new AtomicReference<>();

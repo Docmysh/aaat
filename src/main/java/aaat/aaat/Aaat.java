@@ -1,7 +1,9 @@
 package aaat.aaat;
 
+import aaat.aaat.client.AaatClientHooks;
 import aaat.aaat.registry.ModItems;
 import com.mojang.logging.LogUtils;
+import net.minecraftforge.client.event.ClientTickEvent;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -11,6 +13,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.event.TickEvent;
 import org.slf4j.Logger;
 
 @Mod(Aaat.MODID)
@@ -37,6 +40,13 @@ public class Aaat {
         @SubscribeEvent
         public static void onClientSetup(final FMLClientSetupEvent event) {
             LOGGER.debug("Client setup complete for {}", MODID);
+        }
+
+        @SubscribeEvent
+        public static void onClientTick(final ClientTickEvent event) {
+            if (event.phase == TickEvent.Phase.END) {
+                AaatClientHooks.resizeCapturedDepthBuffer();
+            }
         }
     }
 }

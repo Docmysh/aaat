@@ -6,9 +6,7 @@
   "refmap": "aaat.refmap.json",
   "mixins": [
   ],
-  "client": [
-    "client.MinecraftMixin"
-  ],
+  "client": [],
   "injectors": {
     "defaultRequire": 1
   },
