@@ -9,6 +9,10 @@ pluginManagement {
             name = 'Architectury'
             url = 'https://maven.architectury.dev/'
         }
+        maven {
+            name = 'FabricMC'
+            url = 'https://maven.fabricmc.net/'
+        }
     }
 }
 

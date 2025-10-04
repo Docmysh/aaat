@@ -131,6 +131,7 @@ repositories {
     // Forge + Maven Central are added by FG; being explicit is fine.
     maven { url = "https://maven.minecraftforge.net" }
     mavenCentral()
+    maven { url = "https://maven.fabricmc.net" }
 
     // AAA Particles from Chloe's Maven (only these groups resolve here)
     maven {
