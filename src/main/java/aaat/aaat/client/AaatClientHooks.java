@@ -67,7 +67,7 @@ public final class AaatClientHooks {
             return;
         }
 
-        renderTarget.resize(width, height);
+        renderTarget.resize(width, height, Minecraft.ON_OSX);
         cachedWidth = width;
         cachedHeight = height;
     }
