@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(Minecraft.class)
 abstract class MinecraftMixin {
 
-    @Inject(method = "m_5741_", at = @At("TAIL"), require = 0)
+    @Inject(method = "resizeDisplay", at = @At("TAIL"), require = 0)
     private void aaat$resizeCapturedDepthBuffer(CallbackInfo ci) {
         AaatClientHooks.resizeCapturedDepthBuffer();
     }
