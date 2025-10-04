@@ -1,4 +1,4 @@
-package test2.vfxtest2.item;
+package aaat.aaat.item;
 
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;

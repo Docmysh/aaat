@@ -1,5 +1,7 @@
-package test2.vfxtest2.registry;
+package aaat.aaat.registry;
 
+import aaat.aaat.Aaat;
+import aaat.aaat.item.ParticleSpawnItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
@@ -8,12 +10,10 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import test2.vfxtest2.Vfxtest2;
-import test2.vfxtest2.item.ParticleSpawnItem;
 
 public final class ModItems {
     private static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, Vfxtest2.MODID);
+            DeferredRegister.create(ForgeRegistries.ITEMS, Aaat.MODID);
 
     public static final RegistryObject<Item> PARTICLE_SPAWNER = ITEMS.register("particle_spawner",
             () -> new ParticleSpawnItem(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
